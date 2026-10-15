@@ -37,7 +37,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-space-sm lg:col-span-4">
+          <div className="flex flex-col gap-space-sm lg:col-span-3">
             <h4 className={headingClasses}>Our Offices</h4>
             <ul className="flex flex-col gap-space-md">
               {offices.map(({ city, lines }) => (
@@ -56,9 +56,9 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-space-sm lg:col-span-2">
+          <div className="flex flex-col gap-space-sm lg:col-span-3">
             <h4 className={headingClasses}>Follow Us</h4>
-            <ul className="flex flex-wrap items-center gap-2.5">
+            <ul className="flex flex-nowrap items-center gap-2.5">
               {socialLinks.map(({ network, label, href }) => (
                 <li key={network}>
                   <a

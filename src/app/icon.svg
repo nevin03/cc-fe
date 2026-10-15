@@ -1,19 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Codecat mark: a crouched, stalking cat (head low on the left, tail curling up on the right). -->
-  <g fill="#2563EB" stroke="#2563EB" stroke-linecap="round" stroke-linejoin="round">
-    <!-- tail -->
-    <path d="M45 31 C53 26 54 17 51 10 C50 7 52 4.5 55 6" fill="none" stroke-width="4" />
-    <!-- body, sloping down toward the head -->
-    <path d="M17 39 C22 31 33 26 43 27 C50 28 52 35 49 41 C46 46 36 46 27 46 C22 46 18 44 17 39 Z" stroke-width="1" />
-    <!-- back legs -->
-    <path d="M46 42 L49 53 M41 44 L40 54" fill="none" stroke-width="4" />
-    <!-- front legs, stretched forward -->
-    <path d="M20 44 L7 52 M26 45 L16 54" fill="none" stroke-width="4" />
-    <!-- head and ears -->
-    <circle cx="14" cy="42" r="7.5" stroke-width="0" />
-    <path d="M7.5 38 L8 29 L13.5 35 Z M15.5 35 L20.5 29.5 L21 38 Z" stroke-width="1" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="10 -50 220 220" role="img" aria-label="Codecat Technologies">
+  <!--
+    Two Cs forming an infinity loop. Geometry: circles r=38 at (70,60) and (170,60);
+    the crossing lines are their internal tangents (touch points at x=98.9 / 141.1).
+    The right loop is left open on its outer side so the mark reads as "CC".
+  -->
+  <defs>
+    <linearGradient id="cc-fill" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="0" y2="106">
+      <stop offset="0" stop-color="#ff4a1c"/>
+      <stop offset="0.45" stop-color="#8b3df0"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <!-- Cuts a clean gap in the lower strand where the upper strand crosses it. -->
+    <mask id="cc-gap" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="120">
+      <rect width="240" height="120" fill="#fff"/>
+      <line x1="137" y1="40.1" x2="103" y2="79.9" stroke="#000" stroke-width="27" stroke-linecap="butt"/>
+    </mask>
+  </defs>
+  <g fill="none" stroke="url(#cc-fill)" stroke-width="22" stroke-linecap="butt">
+    <!-- Whole loop, gapped at the crossing. -->
+    <path mask="url(#cc-gap)"
+      d="M201.1 38.2 A38 38 0 0 0 141.1 35.3 L98.9 84.7 A38 38 0 1 1 98.9 35.3 L141.1 84.7 A38 38 0 0 0 201.1 81.8"/>
+    <!-- Upper strand redrawn over the gap. -->
+    <path d="M141.1 35.3 L98.9 84.7"/>
   </g>
-  <!-- eyes -->
-  <ellipse cx="11" cy="42.5" rx="1.7" ry="1.2" fill="#FACC15" />
-  <ellipse cx="16.8" cy="42.5" rx="1.7" ry="1.2" fill="#FACC15" />
 </svg>

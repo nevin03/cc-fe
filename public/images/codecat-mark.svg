@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120" role="img" aria-label="Codecat Technologies">
+  <!--
+    Two Cs forming an infinity loop. Geometry: circles r=38 at (70,60) and (170,60);
+    the crossing lines are their internal tangents (touch points at x=98.9 / 141.1).
+    The right loop is left open on its outer side so the mark reads as "CC".
+  -->
+  <defs>
+    <linearGradient id="cc-fill" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="0" y2="106">
+      <stop offset="0" stop-color="#ff4a1c"/>
+      <stop offset="0.45" stop-color="#8b3df0"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <!-- Cuts a clean gap in the lower strand where the upper strand crosses it. -->
+    <mask id="cc-gap" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="120">
+      <rect width="240" height="120" fill="#fff"/>
+      <line x1="137" y1="40.1" x2="103" y2="79.9" stroke="#000" stroke-width="27" stroke-linecap="butt"/>
+    </mask>
+  </defs>
+  <g fill="none" stroke="url(#cc-fill)" stroke-width="22" stroke-linecap="butt">
+    <!-- Whole loop, gapped at the crossing. -->
+    <path mask="url(#cc-gap)"
+      d="M201.1 38.2 A38 38 0 0 0 141.1 35.3 L98.9 84.7 A38 38 0 1 1 98.9 35.3 L141.1 84.7 A38 38 0 0 0 201.1 81.8"/>
+    <!-- Upper strand redrawn over the gap. -->
+    <path d="M141.1 35.3 L98.9 84.7"/>
+  </g>
+</svg>

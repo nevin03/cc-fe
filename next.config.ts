@@ -6,7 +6,6 @@ const sectionRedirects = [
   ["/products", "products"],
   ["/services", "services"],
   ["/projects", "projects"],
-  ["/careers", "careers"],
   ["/contact-us", "contact"],
 ] as const;
 

@@ -35,7 +35,8 @@ export const ROUTES = {
   products: sectionHref(SECTIONS.products),
   services: sectionHref(SECTIONS.services),
   projects: sectionHref(SECTIONS.projects),
-  careers: sectionHref(SECTIONS.careers),
+  careers: "/careers",
+  genAi: "/gen-ai",
   contact: sectionHref(SECTIONS.contact),
   consultation: sectionHref("consultation"),
 } as const;
@@ -52,3 +53,6 @@ export const mainNav: { label: string; id: SectionId }[] = [
   // { label: "Careers", id: SECTIONS.careers },
   // { label: "Contact Us", id: SECTIONS.contact },
 ];
+
+/** Nav links to standalone pages, shown after the section links. */
+export const pageNav: { label: string; href: string }[] = [{ label: "Careers", href: ROUTES.careers }];

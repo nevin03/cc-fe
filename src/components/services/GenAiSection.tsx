@@ -27,7 +27,7 @@ export function GenAiSection() {
             meaningful progress.
           </p>
           <Link
-            href={ROUTES.contact}
+            href={ROUTES.genAi}
             className="mt-4 inline-flex items-center gap-3 border border-white/80 px-8 py-4 text-body-md font-medium text-white transition-colors hover:bg-white hover:text-black"
           >
             Unlock the Potential of AI

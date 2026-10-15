@@ -1,8 +1,8 @@
+import Image from "next/image";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui";
 import { digitalRevolution, ownBrands } from "@/data/insights";
 import { cn } from "@/lib/cn";
-import { GradientCube } from "./GradientCube";
 
 function Article({ title, paragraphs, className }: { title: string; paragraphs: string[]; className?: string }) {
   return (
@@ -19,37 +19,42 @@ function Article({ title, paragraphs, className }: { title: string; paragraphs: 
   );
 }
 
-/** Static 2D gradient orb (matches the Products blob's palette): cyan left, violet centre, pink lower right, soft highlight. */
-const ORB_BACKGROUND = [
-  "radial-gradient(circle at 42% 18%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 9%)",
-  "radial-gradient(circle at 8% 45%, rgba(102,214,250,0.95) 0%, rgba(102,214,250,0) 38%)",
-  "radial-gradient(circle at 78% 78%, rgba(233,124,232,0.95) 0%, rgba(233,124,232,0) 50%)",
-  "radial-gradient(circle at 50% 50%, #8b86f6 0%, #9d9cf7 70%, #b4a9f8 100%)",
-].join(", ");
-
-/** Insights: two alternating text blocks on white, each paired with a static gradient shape. */
+/** Insights: two alternating text blocks on white, each paired with a photo. */
 export function InsightsSection() {
   return (
     <section aria-label="Insights" className="relative w-full overflow-hidden bg-white">
-      {/* Block 1: text left, circle right. */}
+      {/* Block 1: text left, photo right. */}
       <div className="relative pt-14 pb-8 lg:pt-16 lg:pb-10">
         <Container className="relative z-10 grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div className="flex flex-col items-start gap-6">
             <span className="rounded-full bg-surface-container px-4 py-1.5 text-body-md font-medium text-on-surface">Insights</span>
             <Article {...digitalRevolution} />
           </div>
-          <div
-            aria-hidden="true"
-            className="mx-auto aspect-square w-full max-w-[420px] rounded-full animate-[shape-float_7s_ease-in-out_infinite,shape-hue_9s_ease-in-out_infinite] motion-reduce:animate-none"
-            style={{ background: ORB_BACKGROUND }}
-          />
+          <Reveal className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src="/images/space.jpg"
+              alt="Open-plan office with desks and monitors in front of large windows"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </Reveal>
         </Container>
       </div>
 
-      {/* Block 2: cube left, text right. */}
+      {/* Block 2: photo left, text right. */}
       <div className="relative pt-8 pb-14 lg:pt-10 lg:pb-16">
         <Container className="relative z-10 grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          <GradientCube className="order-last py-10 lg:order-first" />
+          <Reveal className="relative order-last aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lg lg:order-first">
+            <Image
+              src="/images/clients.jpg"
+              alt="Two people shaking hands to close a business agreement"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+              style={{ objectPosition: "center 55%" }}
+            />
+          </Reveal>
           <Article {...ownBrands} />
         </Container>
       </div>

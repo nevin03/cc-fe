@@ -1,4 +1,6 @@
-import { mainNav, sectionHref, type SectionId } from "@/config/site";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { mainNav, pageNav, sectionHref, type SectionId } from "@/config/site";
 import { cn } from "@/lib/cn";
 import { headerOverlayStyles, headerStyles } from "./header-styles";
 
@@ -12,6 +14,7 @@ interface NavLinksProps {
 
 export function NavLinks({ activeId, overlay, className, onNavigate }: NavLinksProps) {
   const styles = overlay ? headerOverlayStyles : headerStyles;
+  const pathname = usePathname();
 
   return (
     <nav aria-label="Main" className={className}>
@@ -27,6 +30,20 @@ export function NavLinks({ activeId, overlay, className, onNavigate }: NavLinksP
           >
             {label}
           </a>
+        );
+      })}
+      {pageNav.map(({ label, href }) => {
+        const isActive = pathname === href;
+        return (
+          <Link
+            key={href}
+            href={href}
+            onClick={onNavigate}
+            aria-current={isActive ? "page" : undefined}
+            className={cn("transition-colors", isActive ? styles.active : styles.link)}
+          >
+            {label}
+          </Link>
         );
       })}
     </nav>
