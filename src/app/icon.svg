@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Codecat mark: a crouched, stalking cat (head low on the left, tail curling up on the right). -->
+  <g fill="#2563EB" stroke="#2563EB" stroke-linecap="round" stroke-linejoin="round">
+    <!-- tail -->
+    <path d="M45 31 C53 26 54 17 51 10 C50 7 52 4.5 55 6" fill="none" stroke-width="4" />
+    <!-- body, sloping down toward the head -->
+    <path d="M17 39 C22 31 33 26 43 27 C50 28 52 35 49 41 C46 46 36 46 27 46 C22 46 18 44 17 39 Z" stroke-width="1" />
+    <!-- back legs -->
+    <path d="M46 42 L49 53 M41 44 L40 54" fill="none" stroke-width="4" />
+    <!-- front legs, stretched forward -->
+    <path d="M20 44 L7 52 M26 45 L16 54" fill="none" stroke-width="4" />
+    <!-- head and ears -->
+    <circle cx="14" cy="42" r="7.5" stroke-width="0" />
+    <path d="M7.5 38 L8 29 L13.5 35 Z M15.5 35 L20.5 29.5 L21 38 Z" stroke-width="1" />
+  </g>
+  <!-- eyes -->
+  <ellipse cx="11" cy="42.5" rx="1.7" ry="1.2" fill="#FACC15" />
+  <ellipse cx="16.8" cy="42.5" rx="1.7" ry="1.2" fill="#FACC15" />
+</svg>
